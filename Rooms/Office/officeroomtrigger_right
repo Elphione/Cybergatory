@@ -1,0 +1,18 @@
+using UnityEngine;
+using System.Collections;
+
+public class officeroomtrigger_right : MonoBehaviour {
+
+float x1 = 68.3f;
+float y1 = -449.8f;
+
+float x2 = 185f;
+float y2 = -400f;
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.name == "Player") {
+			other.transform.position = new Vector2(x1, y1);
+			Camera.main.transform.position = new Vector2(x2, y2);
+		}
+	}
+}
