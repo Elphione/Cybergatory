@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class player_movement : MonoBehaviour {
-	public float Speed = 110f;	// arbitrary float to use as speed multiplier 
+	public float Speed = 95f;	// arbitrary float to use as speed multiplier 
 	public float move_x = 0f; 	// movement axis of object
 	public float move_y = 0f; 
 	public float facing = 0f;
@@ -72,7 +72,4 @@ public class player_movement : MonoBehaviour {
 		
 	}
 	
-	int GetMessage(int message_num) {
-		return 4;
-	}
 }
