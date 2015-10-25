@@ -1,0 +1,27 @@
+using UnityEngine;
+using System.Collections;
+
+public class deliveryanimation : MonoBehaviour {
+
+	void Start() {
+
+		GetComponent<Animator>().Play("Idle", -1, 0);
+	}
+
+	void OnTriggerStay2D (Collider2D other) {
+
+		if (other.gameObject.tag == "Player" && (Input.GetKeyDown("up"))) {
+			GetComponent<Animator>().Play("Delivering", -1, 0);
+			StartCoroutine("Delivering");			
+		}
+	}
+
+	IEnumerator Delivering() {
+
+		yield return new WaitForSeconds(2f);
+		gameObject.GetComponent<Renderer>().enabled = false;
+		yield return new WaitForSeconds (1f);
+		gameObject.GetComponent<Renderer>().enabled = true;
+		GetComponent<Animator>().Play("Returning", -1, 0);
+	}
+}
